@@ -13,11 +13,30 @@ This model is then compared to an Azure AutoML run.
 
 
 ## Summary
-**In 1-2 sentences, explain the problem statement: e.g "This dataset contains data about... we seek to predict..."**
+**The dataset consists of banking institution of Portugal and contains data about individuals relation to marketing campaigns. The individuals have mean age of 38.
+The most calls were cellular and the month with most traffic was May.**
 
 **In 1-2 sentences, explain the solution: e.g. "The best performing model was a ..."**
 
 ## Scikit-learn Pipeline
+
+
+Specified the parameter sampler:
+
+```
+ps = RandomParameterSampling( {
+        "C": uniform(0.05, 0.1),
+        "max_iter": choice(0, 80, 100, 120, 140)
+    })
+```
+"C" is Regularization and "max_iter" is number of iteration and both are set as specified in train.py that "C" should be between 0.0 - 1.0 and "max_iter"
+whole number.
+_RandomParameterSampling_ is one of the choices available for the sampler and I chose it because it is the faster and supports early termination of 
+low-performance runs. If budget is not an issue, we could use _GridParameterSampling_ to exhaustively search over the search space or 
+_BayesianParameterSampling_ to explore the hyperparameter space.
+Bandit is an early termination policy based on slack factor/slack amount and evaluation interval. The policy early terminates any runs where the 
+primary metric is not within the specified slack factor/slack amount with respect to the best performing training run.
+_slack_factor_: The amount of slack allowed with respect to the best performing training run. This factor specifies the slack as a ratio.
 **Explain the pipeline architecture, including data, hyperparameter tuning, and classification algorithm.**
 
 **What are the benefits of the parameter sampler you chose?**
