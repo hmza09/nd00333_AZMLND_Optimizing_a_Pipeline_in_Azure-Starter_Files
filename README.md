@@ -50,41 +50,42 @@ task = 'Classification' specfies that the task is of classification with primary
 n_cross_validations=3 parameter sets how many cross validations to perform, based on the same number of folds (number of subsets).
 
 ********************************************************************************************
+| ITER      | Pipeline | Duration | Metric | Best |
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+|   0 |  MaxAbsScaler LightGBM  |                       | 0:00:34  |           0.9139  |  0.9139 |
+|    1 |  MaxAbsScaler XGBoostClassifier                | 0:00:36  |           0.9142  |  0.9142 |
+|    2 |  MaxAbsScaler ExtremeRandomTrees               | 0:00:34  |           0.7259  |  0.9142 |
+|    3 |  SparseNormalizer XGBoostClassifier            | 0:00:33  |           0.9135  |  0.9142 |
+|    4 |  MaxAbsScaler LightGBM                         | 0:00:30  |           0.9134  |  0.9142 |
+|    5 |  MaxAbsScaler LightGBM                         | 0:00:29  |           0.8880  |  0.9142 |
+|    6 |  StandardScalerWrapper XGBoostClassifier       | 0:00:30  |           0.9056  |  0.9142 |
+|    7 |  MaxAbsScaler LogisticRegression               | 0:00:32  |           0.9084  |  0.9142 |
+|    8 |  StandardScalerWrapper ExtremeRandomTrees      | 0:00:28  |           0.8895  |  0.9142 |
+|    9 |  StandardScalerWrapper XGBoostClassifier       | 0:00:30  |           0.9064  |  0.9142 |
+|   10 |  SparseNormalizer LightGBM                     | 0:00:28  |           0.9045  |  0.9142 |
+|   11 |  StandardScalerWrapper XGBoostClassifier       | 0:00:41  |           0.9127  |  0.9142 |
+|   12 |  MaxAbsScaler LogisticRegression               | 0:00:32  |           0.9087  |  0.9142 |
+|   13 |  MaxAbsScaler SGD                              | 0:00:29  |           0.8325  |  0.9142 |
+|   14 |  StandardScalerWrapper XGBoostClassifier       | 0:00:32  |           0.9144  |  0.9144 |
+|   15 |  SparseNormalizer RandomForest                 | 0:00:45  |           0.8161  |  0.9144 |
+|   16 |  StandardScalerWrapper LogisticRegression      | 0:00:32  |           0.9084  |  0.9144 |
+|   17 |  StandardScalerWrapper RandomForest            | 0:00:35  |           0.9008  |  0.9144 |
+|   18 |  StandardScalerWrapper XGBoostClassifier       | 0:00:34  |           0.9128  |  0.9144 |
+|   19 |  TruncatedSVDWrapper RandomForest              | 0:02:35  |           0.8153  |  0.9144 |
+|   20 |  TruncatedSVDWrapper RandomForest              | 0:03:19  |           0.8290  |  0.9144 |
+|   21 |  StandardScalerWrapper XGBoostClassifier       | 0:00:32  |           0.9125  |  0.9144 |
+|   22 |  MaxAbsScaler LightGBM                         | 0:00:30  |           0.8880  |  0.9144 |
+|   23 |  MaxAbsScaler LightGBM                         | 0:00:37  |           0.9088  |  0.9144 |
+|   24 |  MaxAbsScaler LightGBM                         | 0:00:30  |           0.9041  |  0.9144 |
+|   25 |  StandardScalerWrapper XGBoostClassifier       | 0:00:58  |           0.9128  |  0.9144 |
+|   26 |  StandardScalerWrapper XGBoostClassifier       | 0:02:25  |           0.9093  |  0.9144 |
+|   27 |  SparseNormalizer LightGBM                     | 0:00:29  |           0.9021  |  0.9144 |
+|   28 |  StandardScalerWrapper XGBoostClassifier       | 0:01:22  |           0.9110  |  0.9144 |
+|   29 |  VotingEnsemble                                | 0:00:40  |           0.9176  |  0.9176 |
+|   30 |  StackEnsemble                                 | 0:00:50  |           0.9157  |  0.9176 |
 
- ITER   PIPELINE                                       DURATION            METRIC      BEST
-    0   MaxAbsScaler LightGBM                          0:00:34             0.9139    0.9139
-    1   MaxAbsScaler XGBoostClassifier                 0:00:36             0.9142    0.9142
-    2   MaxAbsScaler ExtremeRandomTrees                0:00:34             0.7259    0.9142
-    3   SparseNormalizer XGBoostClassifier             0:00:33             0.9135    0.9142
-    4   MaxAbsScaler LightGBM                          0:00:30             0.9134    0.9142
-    5   MaxAbsScaler LightGBM                          0:00:29             0.8880    0.9142
-    6   StandardScalerWrapper XGBoostClassifier        0:00:30             0.9056    0.9142
-    7   MaxAbsScaler LogisticRegression                0:00:32             0.9084    0.9142
-    8   StandardScalerWrapper ExtremeRandomTrees       0:00:28             0.8895    0.9142
-    9   StandardScalerWrapper XGBoostClassifier        0:00:30             0.9064    0.9142
-   10   SparseNormalizer LightGBM                      0:00:28             0.9045    0.9142
-   11   StandardScalerWrapper XGBoostClassifier        0:00:41             0.9127    0.9142
-   12   MaxAbsScaler LogisticRegression                0:00:32             0.9087    0.9142
-   13   MaxAbsScaler SGD                               0:00:29             0.8325    0.9142
-   14   StandardScalerWrapper XGBoostClassifier        0:00:32             0.9144    0.9144
-   15   SparseNormalizer RandomForest                  0:00:45             0.8161    0.9144
-   16   StandardScalerWrapper LogisticRegression       0:00:32             0.9084    0.9144
-   17   StandardScalerWrapper RandomForest             0:00:35             0.9008    0.9144
-   18   StandardScalerWrapper XGBoostClassifier        0:00:34             0.9128    0.9144
-   19   TruncatedSVDWrapper RandomForest               0:02:35             0.8153    0.9144
-   20   TruncatedSVDWrapper RandomForest               0:03:19             0.8290    0.9144
-   21   StandardScalerWrapper XGBoostClassifier        0:00:32             0.9125    0.9144
-   22   MaxAbsScaler LightGBM                          0:00:30             0.8880    0.9144
-   23   MaxAbsScaler LightGBM                          0:00:37             0.9088    0.9144
-   24   MaxAbsScaler LightGBM                          0:00:30             0.9041    0.9144
-   25   StandardScalerWrapper XGBoostClassifier        0:00:58             0.9128    0.9144
-   26   StandardScalerWrapper XGBoostClassifier        0:02:25             0.9093    0.9144
-   27   SparseNormalizer LightGBM                      0:00:29             0.9021    0.9144
-   28   StandardScalerWrapper XGBoostClassifier        0:01:22             0.9110    0.9144
-   29   VotingEnsemble                                 0:00:40             0.9176    0.9176
-   30   StackEnsemble                                  0:00:50             0.9157    0.9176
-Stopping criteria reached at iteration 31. Ending experiment.
 ********************************************************************************************
+Stopping criteria reached at iteration.
 
 ## Pipeline comparison
 | HyperDrive Model | |
